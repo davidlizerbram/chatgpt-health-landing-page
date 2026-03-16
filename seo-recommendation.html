@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO &amp; Page Configuration — ChatGPT Health Landing Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif; color: #1e293b; background: #f8fafc; line-height: 1.6; }
+  .playfair { font-family: 'Playfair Display', Georgia, serif; }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+  .page-header { background: #0f172a; color: white; padding: 48px 24px; margin-bottom: 48px; }
+  .page-header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 32px; margin-bottom: 8px; }
+  .page-header p { color: #94a3b8; font-size: 16px; }
+
+  .section { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+  .section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; margin-bottom: 6px; color: #1e293b; }
+  .section-sub { color: #64748b; font-size: 13px; font-style: italic; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #e2e8f0; }
+
+  table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+  th { text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #b45309; padding: 8px 12px; border-bottom: 2px solid #e2e8f0; }
+  td { padding: 10px 12px; border-bottom: 1px solid #f1f5f9; font-size: 15px; color: #374151; vertical-align: top; }
+  td:first-child { font-weight: 600; color: #1e293b; white-space: nowrap; width: 200px; }
+  tr:last-child td { border-bottom: none; }
+
+  .slug-display { background: #1e293b; color: #fbbf24; font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; font-size: 18px; font-weight: 600; padding: 16px 20px; border-radius: 8px; margin: 12px 0 20px; display: inline-block; }
+  .meta-display { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 12px 0; font-size: 14px; }
+  .meta-display .meta-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; margin-bottom: 2px; }
+  .meta-display .meta-value { color: #1e293b; margin-bottom: 12px; }
+  .meta-display .meta-value:last-child { margin-bottom: 0; }
+  .char-count { font-size: 11px; color: #94a3b8; }
+
+  .keyword-tag { display: inline-block; background: #fef3c7; color: #92400e; font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 4px; margin: 3px 4px 3px 0; }
+  .keyword-tag.primary { background: #d97706; color: white; }
+  .keyword-tag.secondary { background: #fef3c7; color: #92400e; }
+  .keyword-tag.longtail { background: #f1f5f9; color: #475569; }
+
+  .note { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-top: 16px; font-size: 14px; color: #78350f; }
+  .note strong { color: #92400e; }
+
+  .checklist { list-style: none; padding: 0; }
+  .checklist li { padding: 8px 0; font-size: 15px; color: #374151; display: flex; gap: 10px; align-items: flex-start; }
+  .checklist li::before { content: ""; display: inline-block; width: 20px; height: 20px; min-width: 20px; border: 2px solid #e2e8f0; border-radius: 4px; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="container">
+    <h1 class="playfair">SEO &amp; Page Configuration</h1>
+    <p>ChatGPT Health Injury — Landing Page</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ============================================ -->
+  <!-- SLUG -->
+  <!-- ============================================ -->
+  <div class="section">
+    <h2 class="playfair">Recommended URL Slug</h2>
+    <p class="section-sub">WordPress permalink — set in Elementor page settings or Yoast</p>
+
+    <div class="slug-display">schenklawfirm.com/chatgpt-health-lawsuit/</div>
+
+    <table>
+      <tr>
+        <td>Primary Slug</td>
+        <td><code>/chatgpt-health-lawsuit/</code></td>
+      </tr>
+      <tr>
+        <td>Alternate Options</td>
+        <td>
+          <code>/chatgpt-health-injury/</code><br>
+          <code>/chatgpt-health-attorney/</code><br>
+          <code>/ai-medical-advice-lawsuit/</code>
+        </td>
+      </tr>
+      <tr>
+        <td>Rationale</td>
+        <td>"chatgpt-health-lawsuit" combines the product name (ChatGPT Health) with high-intent legal search term ("lawsuit"). Short, descriptive, and keyword-rich.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- META TAGS -->
+  <!-- ============================================ -->
+  <div class="section">
+    <h2 class="playfair">Meta Title &amp; Description</h2>
+    <p class="section-sub">For Yoast SEO or Elementor SEO settings</p>
+
+    <div class="meta-display">
+      <div class="meta-label">Meta Title <span class="char-count">(58 characters — max 60)</span></div>
+      <div class="meta-value"><strong>ChatGPT Health Lawsuit Attorney | The Schenk Law Firm</strong></div>
+
+      <div class="meta-label">Meta Description <span class="char-count">(155 characters — max 160)</span></div>
+      <div class="meta-value">Harmed by ChatGPT Health advice? Studies show it fails to identify emergencies 52% of the time. Free case evaluation. Call (858) 424-4444.</div>
+    </div>
+
+    <div class="meta-display">
+      <div class="meta-label">Open Graph Title</div>
+      <div class="meta-value"><strong>Harmed by ChatGPT Health? You May Have a Legal Claim.</strong></div>
+
+      <div class="meta-label">Open Graph Description</div>
+      <div class="meta-value">A peer-reviewed study found ChatGPT Health under-triages 52% of medical emergencies. If you or a loved one was harmed, contact The Schenk Law Firm for a free evaluation.</div>
+
+      <div class="meta-label">Open Graph Image</div>
+      <div class="meta-value" style="color: #6b7280; font-style: italic;">Use the hero background image or firm logo. Recommended: 1200x630px.</div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- KEYWORDS -->
+  <!-- ============================================ -->
+  <div class="section">
+    <h2 class="playfair">Target Keywords</h2>
+    <p class="section-sub">Organized by priority — primary keyword should appear in H1, meta title, first paragraph, and slug</p>
+
+    <table>
+      <tr>
+        <th>Priority</th>
+        <th>Keywords</th>
+      </tr>
+      <tr>
+        <td>Primary</td>
+        <td>
+          <span class="keyword-tag primary">chatgpt health lawsuit</span>
+          <span class="keyword-tag primary">chatgpt health lawyer</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Secondary</td>
+        <td>
+          <span class="keyword-tag secondary">chatgpt health injury</span>
+          <span class="keyword-tag secondary">chatgpt medical advice lawsuit</span>
+          <span class="keyword-tag secondary">ai health advice attorney</span>
+          <span class="keyword-tag secondary">chatgpt health dangerous</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Long-Tail</td>
+        <td>
+          <span class="keyword-tag longtail">chatgpt health under-triage</span>
+          <span class="keyword-tag longtail">chatgpt health missed emergency</span>
+          <span class="keyword-tag longtail">harmed by chatgpt health advice</span>
+          <span class="keyword-tag longtail">chatgpt health product liability</span>
+          <span class="keyword-tag longtail">openai medical advice injury claim</span>
+          <span class="keyword-tag longtail">chatgpt health wrong diagnosis</span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="note">
+      <strong>Note:</strong> This is an emerging tort — search volume for "chatgpt health lawsuit" is likely low now but growing. The page should rank quickly due to low competition. As cases develop and media coverage increases, these keywords will appreciate significantly.
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SCHEMA MARKUP -->
+  <!-- ============================================ -->
+  <div class="section">
+    <h2 class="playfair">Schema Markup (JSON-LD)</h2>
+    <p class="section-sub">Add to Elementor &gt; Custom Code or Yoast &gt; Schema tab</p>
+
+    <div class="meta-display" style="font-family: 'SF Mono', 'Fira Code', Consolas, monospace; font-size: 13px; white-space: pre-wrap; line-height: 1.5; overflow-x: auto;">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "The Schenk Law Firm, LLP",
+  "description": "Attorneys investigating ChatGPT Health injury claims for patients harmed by AI-generated medical advice.",
+  "url": "https://schenklawfirm.com/chatgpt-health-lawsuit/",
+  "telephone": "+18584244444",
+  "email": "info@schenklawfirm.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "600 West Broadway, Suite 700",
+    "addressLocality": "San Diego",
+    "addressRegion": "CA",
+    "postalCode": "92101",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "priceRange": "Free Consultation"
+}
+    </div>
+
+    <div class="meta-display" style="font-family: 'SF Mono', 'Fira Code', Consolas, monospace; font-size: 13px; white-space: pre-wrap; line-height: 1.5; overflow-x: auto;">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is ChatGPT Health?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChatGPT Health is a feature launched by OpenAI in January 2026 that allows U.S. users to connect their medical records and receive AI-generated health advice. Over 40 million Americans use it daily."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can ChatGPT Health cause harm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Nature Medicine study found ChatGPT Health under-triaged 52% of emergency cases, telling patients with life-threatening conditions to stay home instead of going to the emergency room."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kind of injuries qualify for a ChatGPT Health claim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you delayed medical treatment, experienced worsening of a condition, or suffered harm after relying on ChatGPT Health advice, you may have a claim. This includes missed emergencies like respiratory failure, diabetic crises, or mental health emergencies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it cost anything to speak with an attorney about a ChatGPT Health injury?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The Schenk Law Firm offers free, confidential consultations and handles these cases on a contingency fee basis — you pay nothing unless we win."
+      }
+    }
+  ]
+}
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- WORDPRESS / ELEMENTOR SETTINGS -->
+  <!-- ============================================ -->
+  <div class="section">
+    <h2 class="playfair">WordPress &amp; Elementor Settings</h2>
+    <p class="section-sub">Page-level configuration</p>
+
+    <table>
+      <tr>
+        <td>Page Title (WP)</td>
+        <td>ChatGPT Health Lawsuit Attorney</td>
+      </tr>
+      <tr>
+        <td>Slug</td>
+        <td><code>chatgpt-health-lawsuit</code></td>
+      </tr>
+      <tr>
+        <td>Page Template</td>
+        <td>Elementor Full Width (no sidebar)</td>
+      </tr>
+      <tr>
+        <td>Parent Page</td>
+        <td>None (top-level) or under /mass-torts/ if preferred</td>
+      </tr>
+      <tr>
+        <td>Noindex</td>
+        <td>No — this page should be indexed</td>
+      </tr>
+      <tr>
+        <td>Canonical URL</td>
+        <td><code>https://schenklawfirm.com/chatgpt-health-lawsuit/</code></td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- INTERNAL LINKING -->
+  <!-- ============================================ -->
+  <div class="section">
+    <h2 class="playfair">Internal Linking Strategy</h2>
+    <p class="section-sub">Pages that should link to/from the ChatGPT Health page</p>
+
+    <table>
+      <tr>
+        <th>From Page</th>
+        <th>Link Context</th>
+      </tr>
+      <tr>
+        <td>/mass-torts/</td>
+        <td>Add ChatGPT Health as a new tort in the mass torts listing</td>
+      </tr>
+      <tr>
+        <td>/defective-product/</td>
+        <td>Cross-link: ChatGPT Health as a defective product causing injury</td>
+      </tr>
+      <tr>
+        <td>Practice Areas dropdown</td>
+        <td>Consider adding under Mass Torts submenu once page is live</td>
+      </tr>
+      <tr>
+        <td>Blog / Pressroom</td>
+        <td>Write a blog post summarizing the Nature Medicine study findings and link to the landing page</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- LAUNCH CHECKLIST -->
+  <!-- ============================================ -->
+  <div class="section">
+    <h2 class="playfair">Launch Checklist</h2>
+    <p class="section-sub">Complete before publishing</p>
+
+    <ul class="checklist">
+      <li>Upload hero background image to WordPress Media Library</li>
+      <li>Paste Widget 1 HTML into first Elementor HTML widget</li>
+      <li>Add Elementor Contact Form widget between Widget 1 and Widget 2</li>
+      <li>Paste Widget 2 HTML into second Elementor HTML widget</li>
+      <li>Set page slug to <code>chatgpt-health-lawsuit</code></li>
+      <li>Configure Yoast meta title and description</li>
+      <li>Add JSON-LD schema markup (LegalService + FAQPage)</li>
+      <li>Set Open Graph image</li>
+      <li>Test on mobile (verify aip-col-sm grid collapse)</li>
+      <li>Test all external links (NPR, Guardian, Nature Medicine)</li>
+      <li>Verify phone number links work on mobile</li>
+      <li>Add page to Practice Areas dropdown nav (if desired)</li>
+      <li>Add internal links from /mass-torts/ and /defective-product/</li>
+      <li>Submit URL to Google Search Console for indexing</li>
+    </ul>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- TRACKING -->
+  <!-- ============================================ -->
+  <div class="section">
+    <h2 class="playfair">Analytics &amp; Tracking</h2>
+    <p class="section-sub">Optional but recommended</p>
+
+    <table>
+      <tr>
+        <td>UTM Campaign</td>
+        <td><code>chatgpt-health-tort</code></td>
+      </tr>
+      <tr>
+        <td>GA4 Events</td>
+        <td>Track form submissions, phone clicks, and scroll depth on this page</td>
+      </tr>
+      <tr>
+        <td>Call Tracking</td>
+        <td>If using CallRail or similar, assign a tracking number to this page</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+<div style="padding: 40px 24px; text-align: center; color: #94a3b8; font-size: 13px;">
+  SEO recommendation generated March 16, 2026 — The Schenk Law Firm — For internal use
+</div>
+
+</body>
+</html>

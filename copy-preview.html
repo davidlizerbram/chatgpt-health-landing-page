@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT Health Landing Page — Copy Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif; color: #1e293b; background: #f8fafc; line-height: 1.6; }
+  .playfair { font-family: 'Playfair Display', Georgia, serif; }
+
+  /* Layout */
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+  .page-header { background: #1e293b; color: white; padding: 48px 24px; margin-bottom: 48px; }
+  .page-header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 36px; margin-bottom: 12px; }
+  .page-header p { color: #cbd5e1; font-size: 18px; }
+
+  /* Sections */
+  .section { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 40px; margin-bottom: 32px; }
+  .section-number { display: inline-block; background: #d97706; color: white; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  .section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 28px; margin-bottom: 8px; color: #1e293b; }
+  .section-desc { color: #64748b; font-size: 14px; font-style: italic; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #e2e8f0; }
+
+  /* Content labels */
+  .field-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #b45309; margin-bottom: 4px; margin-top: 20px; }
+  .field-label:first-of-type { margin-top: 0; }
+  .field-value { font-size: 16px; color: #374151; margin-bottom: 16px; line-height: 1.7; }
+  .field-value.headline { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; color: #1e293b; line-height: 1.3; }
+  .field-value.headline .gold { color: #d97706; }
+  .field-value.stat { font-size: 36px; font-weight: 700; color: #1e293b; }
+
+  /* Cards grid */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  @media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
+  .card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
+  .card h4 { font-size: 16px; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
+  .card p { font-size: 14px; color: #4b5563; line-height: 1.6; }
+
+  .cards-3 { grid-template-columns: 1fr 1fr 1fr; }
+  @media (max-width: 768px) { .cards-3 { grid-template-columns: 1fr; } }
+
+  /* Quote */
+  .quote-block { border-left: 4px solid #d97706; padding: 20px 24px; background: #fffbeb; border-radius: 0 8px 8px 0; margin: 16px 0; }
+  .quote-block p { font-style: italic; color: #374151; font-size: 16px; line-height: 1.7; }
+  .quote-block .attribution { font-style: normal; color: #6b7280; font-size: 13px; margin-top: 12px; }
+
+  /* Source verification */
+  .source-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 4px; margin-right: 8px; }
+  .source-badge.verified { background: #dcfce7; color: #166534; }
+  .source-badge.unverified { background: #fee2e2; color: #991b1b; }
+  .source-badge.dropped { background: #f3f4f6; color: #6b7280; text-decoration: line-through; }
+
+  /* Fact check box */
+  .fact-check { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin-top: 24px; }
+  .fact-check h4 { font-size: 14px; font-weight: 700; color: #166534; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+  .fact-check ul { padding-left: 20px; }
+  .fact-check li { font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .fact-check li strong { color: #166534; }
+
+  /* Warning */
+  .warning { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 20px; margin-bottom: 24px; }
+  .warning h4 { color: #92400e; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .warning p { color: #78350f; font-size: 14px; }
+
+  /* Divider */
+  .split-marker { background: #d97706; color: white; text-align: center; padding: 16px; border-radius: 8px; margin: 32px 0; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="container">
+    <h1 class="playfair">ChatGPT Health Landing Page</h1>
+    <p>Proposed copy for review — The Schenk Law Firm</p>
+    <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px;">
+      <span class="source-badge verified">NPR (March 11, 2026) — Verified</span>
+      <span class="source-badge verified">The Guardian (Feb 26, 2026) — Verified via mirrors</span>
+      <span class="source-badge dropped">BMJ (392/bmj.s438) — Dropped (paywalled, unverifiable)</span>
+      <span class="source-badge verified">Nature Medicine study (Feb 23, 2026) — Primary source, verified</span>
+      <span class="source-badge verified">NBC News (March 3, 2026) — Verified</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ============================================ -->
+  <!-- SOURCE VERIFICATION -->
+  <!-- ============================================ -->
+  <div class="section">
+    <span class="section-number">Sources &amp; Fact-Check</span>
+    <h2 class="playfair">Verified Sources</h2>
+    <p class="section-desc">Every statistic and quote on the landing page is traceable to one of these verified sources. The BMJ article has been dropped because it is behind a paywall and its content could not be independently verified.</p>
+
+    <div class="field-label">Primary Study</div>
+    <div class="field-value"><strong>Ramaswamy, A. et al.</strong> "ChatGPT Health performance in a structured test of triage recommendations." <em>Nature Medicine</em>, published Feb 23, 2026.<br><a href="https://www.nature.com/articles/s41591-026-04297-7" style="color: #d97706;">nature.com/articles/s41591-026-04297-7</a></div>
+
+    <div class="field-label">Source 1 — NPR</div>
+    <div class="field-value"><strong>Katia Riddle.</strong> "ChatGPT is not always reliable on medical advice, new research suggests." NPR, March 11, 2026.<br><a href="https://www.npr.org/2026/03/11/nx-s1-5744035/chatgpt-might-give-you-bad-medical-advice-studies-warn" style="color: #d97706;">npr.org — full article</a></div>
+
+    <div class="field-label">Source 2 — The Guardian</div>
+    <div class="field-value"><strong>Staff.</strong> "'Unbelievably dangerous': experts sound alarm after ChatGPT Health fails to recognise medical emergencies." The Guardian, Feb 26, 2026.<br><a href="https://www.theguardian.com/technology/2026/feb/26/chatgpt-health-fails-recognise-medical-emergencies" style="color: #d97706;">theguardian.com — full article</a><br><span style="font-size: 13px; color: #6b7280;">(Verified via mirror at blog.quintarelli.it and cross-referenced with NBC News, Futurism, Digital Health Net)</span></div>
+
+    <div class="field-label">Source 3 — NBC News</div>
+    <div class="field-value"><strong>Kaan Ozcan.</strong> "ChatGPT Health 'under-triaged' half of medical emergencies in a new study." NBC News, March 3, 2026.<br><a href="https://www.nbcnews.com/health/health-news/chatgpt-health-under-triaged-half-medical-emergencies-rcna261409" style="color: #d97706;">nbcnews.com — full article</a></div>
+
+    <div class="fact-check">
+      <h4>Fact-Check Summary</h4>
+      <ul>
+        <li><strong>51.6% under-triage rate:</strong> Confirmed in Nature Medicine study; corroborated by NPR, Guardian, NBC News</li>
+        <li><strong>84% suffocating patient misdirected:</strong> Confirmed via Guardian mirrors and Futurism reporting on Nature Medicine study</li>
+        <li><strong>12x more likely to minimize symptoms:</strong> Confirmed via Guardian mirrors referencing Nature Medicine study</li>
+        <li><strong>64.8% over-triage of non-urgent cases:</strong> Confirmed in NBC News reporting on Nature Medicine study</li>
+        <li><strong>40 million daily users:</strong> Confirmed — OpenAI's own figures, cited by NPR and Guardian</li>
+        <li><strong>33% correct identification rate:</strong> Confirmed in NPR, referencing a separate Nature Medicine participant study</li>
+        <li><strong>43% correct next-step decisions:</strong> Confirmed in NPR, same participant study</li>
+        <li><strong>Alex Ruani quote ("unbelievably dangerous"):</strong> Confirmed via Guardian mirrors; Ruani is doctoral researcher at UCL</li>
+        <li><strong>Dr. Ashwin Ramaswamy:</strong> Confirmed as lead author, instructor of urology at Mount Sinai Hospital, NYC</li>
+        <li><strong>Inverted crisis alerts:</strong> Confirmed in NBC News and Guardian mirrors — referencing Nature Medicine study finding</li>
+        <li><strong>OpenAI launched ChatGPT Health in January 2026:</strong> Confirmed across all sources</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 3: HERO -->
+  <!-- ============================================ -->
+  <div class="section">
+    <span class="section-number">Section 3</span>
+    <h2 class="playfair">Hero Section</h2>
+    <p class="section-desc">min-height: 80vh — dark gradient overlay — CSS gradient background (recommend uploading a medical/technology stock photo to WordPress for the final version)</p>
+
+    <div class="field-label">Badge</div>
+    <div class="field-value">Accepting Cases Nationwide</div>
+
+    <div class="field-label">Headline</div>
+    <div class="field-value headline">Harmed by <span class="gold">ChatGPT Health</span> Advice?</div>
+
+    <div class="field-label">Description</div>
+    <div class="field-value">Over 40 million Americans use ChatGPT for medical advice every day. A peer-reviewed study found it fails to identify life-threatening emergencies more than half the time — downplaying conditions like respiratory failure and diabetic ketoacidosis. If you or a loved one suffered harm after relying on ChatGPT Health, our attorneys can help.</div>
+
+    <div class="field-label">Stat Card 1</div>
+    <div class="field-value stat">52%</div>
+    <div class="field-value">of emergency cases under-triaged by ChatGPT Health</div>
+
+    <div class="field-label">Stat Card 2</div>
+    <div class="field-value stat">40M+</div>
+    <div class="field-value">Americans using ChatGPT daily for health advice</div>
+
+    <div class="field-label">Status Badge</div>
+    <div class="field-value">Currently Accepting Cases</div>
+
+    <div class="field-label">CTA Buttons</div>
+    <div class="field-value">Primary: "Call (858) 424-4444" | Secondary: "Free Case Evaluation"</div>
+
+    <div class="field-label">Guarantee Line</div>
+    <div class="field-value">No fee unless we recover compensation for you.</div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 5: PROBLEM -->
+  <!-- ============================================ -->
+  <div class="section">
+    <span class="section-number">Section 5</span>
+    <h2 class="playfair">Problem / Challenge Section</h2>
+    <p class="section-desc">White background — centered header, 3 stat cards, info callout</p>
+
+    <div class="field-label">Section Label</div>
+    <div class="field-value">THE DANGER</div>
+
+    <div class="field-label">Headline</div>
+    <div class="field-value headline">ChatGPT Health Is Failing Patients When It Matters Most</div>
+
+    <div class="field-label">Description</div>
+    <div class="field-value">OpenAI launched ChatGPT Health in January 2026, allowing U.S. users to connect their medical records and receive AI-generated health advice. The first independent safety evaluation, published in <em>Nature Medicine</em>, found the tool routinely minimizes serious medical conditions — a pattern researchers call "unbelievably dangerous."</div>
+
+    <div class="field-label">3 Stat Cards</div>
+    <div class="cards cards-3">
+      <div class="card">
+        <h4 style="font-size: 32px; color: #1e293b;">51.6%</h4>
+        <p>of emergency cases where ChatGPT Health told patients to stay home or book a routine appointment instead of going to the ER</p>
+      </div>
+      <div class="card">
+        <h4 style="font-size: 32px; color: #1e293b;">84%</h4>
+        <p>of attempts where ChatGPT directed a suffocating patient to a future appointment rather than emergency care</p>
+      </div>
+      <div class="card">
+        <h4 style="font-size: 32px; color: #1e293b;">12x</h4>
+        <p>more likely to minimize symptoms when patients or family members downplayed the severity of their condition</p>
+      </div>
+    </div>
+
+    <div class="field-label">Info Callout</div>
+    <div class="quote-block" style="background: #f8fafc; border-left-color: #d97706;">
+      <p style="font-style: normal; font-weight: 600; color: #1e293b; margin-bottom: 8px;">A Pattern of Under-Triaging</p>
+      <p style="font-style: normal;">Researchers found ChatGPT Health appears to be "waiting for the emergency to become undeniable" before recommending emergency care. Conditions like diabetic ketoacidosis and impending respiratory failure were repeatedly triaged as needing only a 24–48 hour follow-up — delays that can be fatal.</p>
+    </div>
+
+    <div class="fact-check">
+      <h4>Source Verification</h4>
+      <ul>
+        <li><strong>51.6%:</strong> Nature Medicine study (Ramaswamy et al.); confirmed by NPR, NBC News, Guardian</li>
+        <li><strong>84%:</strong> Guardian reporting on Nature Medicine study (suffocating woman scenario)</li>
+        <li><strong>12x:</strong> Guardian mirrors and Futurism, citing Nature Medicine study</li>
+        <li><strong>"waiting for the emergency...":</strong> NBC News quoting study findings</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 6: HARMS -->
+  <!-- ============================================ -->
+  <div class="section">
+    <span class="section-number">Section 6</span>
+    <h2 class="playfair">Harms Section</h2>
+    <p class="section-desc">#f8fafc background — centered header, 3x2 card grid, blockquote</p>
+
+    <div class="field-label">Section Label</div>
+    <div class="field-value">WHO IS AT RISK</div>
+
+    <div class="field-label">Headline</div>
+    <div class="field-value headline">How ChatGPT Health Puts Patients in Danger</div>
+
+    <div class="field-label">Description</div>
+    <div class="field-value">From missed emergencies to mental health failures, ChatGPT Health's flawed advice can cause serious harm across a wide range of medical situations.</div>
+
+    <div class="field-label">6 Harm Cards</div>
+    <div class="cards">
+      <div class="card">
+        <h4>Delayed Emergency Treatment</h4>
+        <p>ChatGPT Health under-triaged 52% of emergency cases, advising patients with life-threatening conditions to wait 24–48 hours instead of going to the ER.</p>
+      </div>
+      <div class="card">
+        <h4>Respiratory &amp; Metabolic Crises</h4>
+        <p>Patients with respiratory failure or diabetic ketoacidosis faced approximately 50/50 odds of being told their condition was not urgent.</p>
+      </div>
+      <div class="card">
+        <h4>Missed Mental Health Crises</h4>
+        <p>The system's crisis alerts were inverted relative to clinical risk — appearing more reliably for lower-risk scenarios than when someone described specific plans to harm themselves.</p>
+      </div>
+      <div class="card">
+        <h4>False Sense of Security</h4>
+        <p>ChatGPT's authoritative tone triggers fluency bias, causing users to trust its medical responses far more than the underlying accuracy warrants.</p>
+      </div>
+      <div class="card">
+        <h4>Misdiagnosis Through Poor Prompting</h4>
+        <p>Studies show participants correctly identified their condition only 33% of the time after consulting AI, with only 43% making correct decisions about next steps.</p>
+      </div>
+      <div class="card">
+        <h4>Vulnerable Populations Hit Hardest</h4>
+        <p>Underinsured and rural populations who rely most heavily on ChatGPT as a substitute for professional medical care are disproportionately impacted by its failures.</p>
+      </div>
+    </div>
+
+    <div class="field-label">Blockquote</div>
+    <div class="quote-block">
+      <p>"If you're experiencing respiratory failure or diabetic ketoacidosis, you have a 50/50 chance of this AI telling you it's not a big deal."</p>
+      <p class="attribution">— Alex Ruani, doctoral researcher in health misinformation mitigation, University College London (via <em>The Guardian</em>, Feb 26, 2026)</p>
+    </div>
+
+    <div class="fact-check">
+      <h4>Source Verification</h4>
+      <ul>
+        <li><strong>52% under-triage:</strong> Nature Medicine (Ramaswamy et al.)</li>
+        <li><strong>Inverted crisis alerts:</strong> Nature Medicine study; confirmed by NBC News and Guardian</li>
+        <li><strong>Fluency bias:</strong> Described in NBC News and advisory.com reporting</li>
+        <li><strong>33% / 43% stats:</strong> NPR, citing separate Nature Medicine participant study</li>
+        <li><strong>Ruani quote:</strong> Confirmed via Guardian mirrors (blog.quintarelli.it, guardianlv.com); Ruani affiliation verified at UCL</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 7: LEGAL THEORIES -->
+  <!-- ============================================ -->
+  <div class="section">
+    <span class="section-number">Section 7</span>
+    <h2 class="playfair">Legal Theories / How We Help</h2>
+    <p class="section-desc">White background — two-column grid: left = legal theories, right = attorney cards</p>
+
+    <div class="field-label">Section Label</div>
+    <div class="field-value">HOW WE CAN HELP</div>
+
+    <div class="field-label">Headline</div>
+    <div class="field-value headline">Legal Theories for ChatGPT Health Injury Claims</div>
+
+    <div class="field-label">Intro Text</div>
+    <div class="field-value">When AI health tools provide dangerously inaccurate medical advice that leads to patient harm, the companies behind them may be held liable. Our attorneys are evaluating claims under multiple legal theories.</div>
+
+    <div class="field-label">4 Legal Theory Blocks</div>
+    <div class="cards">
+      <div class="card">
+        <h4>Product Liability</h4>
+        <p>ChatGPT Health is a product marketed for health decision-making. When it provides defective advice — like telling a patient in respiratory failure to wait 48 hours — OpenAI may be liable for a defective product.</p>
+      </div>
+      <div class="card">
+        <h4>Negligence &amp; Duty of Care</h4>
+        <p>By launching a tool that connects to patient medical records and provides health recommendations, OpenAI assumed a duty of care. Failing to ensure that tool meets basic medical safety standards may constitute negligence.</p>
+      </div>
+      <div class="card">
+        <h4>Failure to Warn</h4>
+        <p>OpenAI's disclaimers may be insufficient given the tool's design, which encourages reliance on its health advice. The gap between how the product is marketed and its actual reliability creates potential failure-to-warn claims.</p>
+      </div>
+      <div class="card">
+        <h4>Consumer Protection Violations</h4>
+        <p>Marketing an AI tool as a health advisor while internal testing shows it under-triages more than half of emergencies may violate state consumer protection statutes and constitute unfair or deceptive trade practices.</p>
+      </div>
+    </div>
+
+    <div class="field-label">Dark Callout Box</div>
+    <div class="quote-block" style="background: #1e293b; border-left-color: #fbbf24;">
+      <p style="color: #fbbf24; font-style: normal; font-weight: 700; margin-bottom: 8px;">Experienced Technology Litigation Counsel</p>
+      <p style="color: #cbd5e1; font-style: normal;">The Schenk Law Firm has experience navigating emerging technology litigation. We understand both the legal theories and the technical realities of how AI systems cause harm.</p>
+    </div>
+
+    <div class="field-label">Right Column — Attorney Cards</div>
+    <div class="field-value" style="font-size: 14px; color: #6b7280;">
+      Standard 4-attorney layout:
+      <br>1. <strong>David Lizerbram</strong> — Partner, Business Advisory Practice Lead
+      <br>2. <strong>Frederick Schenk</strong> — Managing Partner
+      <br>3. <strong>Benjamin Schenk</strong> — Co-Founder &amp; Trial Attorney
+      <br>4. <strong>Lynn Schenk</strong> — Of Counsel
+      <br><em>(Using existing attorney card HTML and photo URLs from business-scanner template)</em>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 8: ACCOUNTABILITY -->
+  <!-- ============================================ -->
+  <div class="section">
+    <span class="section-number">Section 8</span>
+    <h2 class="playfair">Accountability / Why Act Now</h2>
+    <p class="section-desc">Dark #1e293b background — gold labels, 3x2 card grid, centered callout</p>
+
+    <div class="field-label">Section Label</div>
+    <div class="field-value">WHY ACT NOW</div>
+
+    <div class="field-label">Headline</div>
+    <div class="field-value headline">Holding AI Companies Accountable for Patient Safety</div>
+
+    <div class="field-label">Description</div>
+    <div class="field-value">As AI health tools reach tens of millions of users, establishing legal accountability is critical to protecting public health.</div>
+
+    <div class="field-label">6 Cards (dark background, gold titles)</div>
+    <div class="cards">
+      <div class="card" style="background: #1e293b; border-color: rgba(255,255,255,0.1);">
+        <h4 style="color: #fbbf24;">Statute of Limitations</h4>
+        <p style="color: #cbd5e1;">Personal injury claims have time limits. If you were harmed by ChatGPT Health advice, the clock is already ticking on your right to pursue compensation.</p>
+      </div>
+      <div class="card" style="background: #1e293b; border-color: rgba(255,255,255,0.1);">
+        <h4 style="color: #fbbf24;">Preserving Evidence</h4>
+        <p style="color: #cbd5e1;">Chat logs, medical records, and timestamps connecting AI advice to medical decisions are critical evidence that must be preserved.</p>
+      </div>
+      <div class="card" style="background: #1e293b; border-color: rgba(255,255,255,0.1);">
+        <h4 style="color: #fbbf24;">Growing Body of Research</h4>
+        <p style="color: #cbd5e1;">Multiple peer-reviewed studies now document ChatGPT Health's failures, strengthening the evidentiary basis for injury claims.</p>
+      </div>
+      <div class="card" style="background: #1e293b; border-color: rgba(255,255,255,0.1);">
+        <h4 style="color: #fbbf24;">Precedent-Setting Litigation</h4>
+        <p style="color: #cbd5e1;">These cases are at the frontier of AI liability law. Early claims help establish the legal frameworks that will protect future patients.</p>
+      </div>
+      <div class="card" style="background: #1e293b; border-color: rgba(255,255,255,0.1);">
+        <h4 style="color: #fbbf24;">No Cost Unless We Win</h4>
+        <p style="color: #cbd5e1;">We handle ChatGPT Health injury cases on a contingency basis. You pay nothing unless we recover compensation for your injuries.</p>
+      </div>
+      <div class="card" style="background: #1e293b; border-color: rgba(255,255,255,0.1);">
+        <h4 style="color: #fbbf24;">Nationwide Representation</h4>
+        <p style="color: #cbd5e1;">Our firm represents clients across all 50 states in claims against AI companies for health-related injuries.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 9: FAQ -->
+  <!-- ============================================ -->
+  <div class="section">
+    <span class="section-number">Section 9</span>
+    <h2 class="playfair">FAQ Section</h2>
+    <p class="section-desc">White background — accordion, max-width 896px centered</p>
+
+    <div class="field-label">Section Label</div>
+    <div class="field-value">FREQUENTLY ASKED QUESTIONS</div>
+
+    <div class="field-label">Headline</div>
+    <div class="field-value headline">Common Questions About ChatGPT Health Injury Claims</div>
+
+    <div style="margin-top: 20px;">
+      <div class="card" style="margin-bottom: 12px;">
+        <h4>What is ChatGPT Health?</h4>
+        <p>ChatGPT Health is a feature launched by OpenAI in January 2026 that allows U.S. users to connect their medical records and receive AI-generated health advice. According to OpenAI, over 40 million Americans use it daily for health-related questions.</p>
+      </div>
+      <div class="card" style="margin-bottom: 12px;">
+        <h4>How can ChatGPT Health cause harm?</h4>
+        <p>A study published in <em>Nature Medicine</em> found that ChatGPT Health under-triaged 52% of emergency cases — meaning it told patients with life-threatening conditions to stay home or schedule routine appointments instead of going to the emergency room. In one scenario, a patient experiencing respiratory failure was directed to a future appointment 84% of the time.</p>
+      </div>
+      <div class="card" style="margin-bottom: 12px;">
+        <h4>What kind of injuries qualify for a claim?</h4>
+        <p>If you or a loved one delayed necessary medical treatment, experienced worsening of a medical condition, or suffered other harm after relying on ChatGPT Health's advice, you may have a claim. This includes cases where the AI failed to recognize emergencies like respiratory failure, diabetic crises, or mental health emergencies.</p>
+      </div>
+      <div class="card" style="margin-bottom: 12px;">
+        <h4>Do I need to prove that ChatGPT Health was the only reason I delayed treatment?</h4>
+        <p>No. You need to show that ChatGPT Health's advice was a contributing factor in your decision to delay or forgo appropriate medical care, and that this contributed to your harm.</p>
+      </div>
+      <div class="card" style="margin-bottom: 12px;">
+        <h4>What evidence should I preserve?</h4>
+        <p>Save all chat logs and conversation histories with ChatGPT Health, medical records showing your condition and treatment timeline, screenshots of the advice you received, and any documentation of when you sought medical care relative to when you consulted the AI.</p>
+      </div>
+      <div class="card" style="margin-bottom: 12px;">
+        <h4>Does it cost anything to speak with an attorney?</h4>
+        <p>No. We offer free, confidential consultations and handle these cases on a contingency fee basis — you pay nothing unless we win.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SPLIT POINT -->
+  <!-- ============================================ -->
+  <div class="split-marker">Elementor Split Point — End of Widget 1 / Start of Widget 2</div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 10: CONTACT FORM -->
+  <!-- ============================================ -->
+  <div class="section">
+    <span class="section-number">Section 10</span>
+    <h2 class="playfair">Contact Form Placeholder</h2>
+    <p class="section-desc">#f8fafc background — Elementor form widget goes here</p>
+
+    <div class="field-label">Headline</div>
+    <div class="field-value headline">Get Your Free Case Evaluation</div>
+
+    <div class="field-label">Description</div>
+    <div class="field-value">Tell us about your experience with ChatGPT Health. Our attorneys will review your case at no cost and with no obligation.</div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 11: FINAL CTA -->
+  <!-- ============================================ -->
+  <div class="section">
+    <span class="section-number">Section 11</span>
+    <h2 class="playfair">Final CTA Section</h2>
+    <p class="section-desc">Dark #1e293b background — centered logo, headline, dual CTAs</p>
+
+    <div class="field-label">Headline</div>
+    <div class="field-value headline">Don't Let AI Negligence Go Unanswered</div>
+
+    <div class="field-label">Description</div>
+    <div class="field-value">If ChatGPT Health gave you or a loved one dangerous medical advice, contact The Schenk Law Firm today for a free, confidential case evaluation.</div>
+
+    <div class="field-label">CTA Buttons</div>
+    <div class="field-value">Primary: "Call (858) 424-4444" | Secondary: "Contact Us Online"</div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- STANDARD SECTIONS (unchanged) -->
+  <!-- ============================================ -->
+  <div class="section" style="background: #f8fafc;">
+    <span class="section-number" style="background: #64748b;">Standard / Unchanged</span>
+    <h2 class="playfair">Sections Using Standard Template</h2>
+    <p class="section-desc">These sections use the same HTML from existing landing pages with no content changes.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h4>Top Bar (Section 1)</h4>
+        <p>Dark navy bar. "Serving Clients Nationwide from San Diego, California" + phone number. Standard.</p>
+      </div>
+      <div class="card">
+        <h4>Sticky Nav (Section 2)</h4>
+        <p>Logo + wordmark, nav links (Our Team, Our Firm, Practice Areas dropdown, Case Referrals, Pressroom, Contact). Standard.</p>
+      </div>
+      <div class="card">
+        <h4>Awards Bar (Section 4)</h4>
+        <p>6 award logos at 64px height. Using existing award-1.webp through award-6.webp. Standard.</p>
+      </div>
+      <div class="card">
+        <h4>Footer (Section 12)</h4>
+        <p>3-column grid: firm info, practice area links, contact links. Attorney advertising disclaimer. Standard.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- NOTES -->
+  <!-- ============================================ -->
+  <div class="section">
+    <span class="section-number" style="background: #475569;">Notes</span>
+    <h2 class="playfair">Implementation Notes</h2>
+
+    <div class="warning">
+      <h4>Hero Background Image Needed</h4>
+      <p>The final landing page will use a CSS gradient as fallback. For best results, upload a stock photo to WordPress (medical/technology theme — stethoscope with digital overlay, hospital corridor, or similar). Recommended dimensions: 1920x1080 minimum. Use the uploaded URL as the hero background.</p>
+    </div>
+
+    <div class="field-label">Practice Areas Dropdown</div>
+    <div class="field-value" style="font-size: 14px;">Will include: Personal Injury, Mass Torts, Asbestos &amp; Mesothelioma, Defective Product, Civil Rights, Vehicle Accidents, Insurance, Sexual Abuse, Business Advisory &amp; Transactions — same as tort-scanner template.</div>
+
+    <div class="field-label">Attorney Bios — Section 7</div>
+    <div class="field-value" style="font-size: 14px;">For this litigation-focused page, David Lizerbram's bio will be adjusted from "Business Advisory Practice Lead" to emphasize technology and emerging litigation experience, while keeping the same photo URL and link.</div>
+
+    <div class="field-label">Source Links on Page</div>
+    <div class="field-value" style="font-size: 14px;">The landing page itself will not include inline source links (not standard for a law firm landing page). All statistics are sourced from peer-reviewed research that can be provided to prospects during consultation. This copy preview documents the full source chain.</div>
+  </div>
+
+</div>
+
+<div style="padding: 40px 24px; text-align: center; color: #94a3b8; font-size: 13px;">
+  Copy preview generated March 16, 2026 — The Schenk Law Firm — For internal review only
+</div>
+
+</body>
+</html>
